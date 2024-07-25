@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/21 12:56:47 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/21 12:56:52 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/16 19:55:30 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/17 21:44:46 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	*nbr = 42;
+	write(1, &c, 1);
 }
 /*
-#include <stdio.h>
-
-int main()
+int	main(void)
 {
-	int i;
+	char	c;
 
-	ft_ft(&i);
-	printf("%d\n", i);
+	c = 'q';
+	ft_putchar(c);
 }*/
