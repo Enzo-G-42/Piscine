@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/28 17:10:48 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/28 22:34:21 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_iterative_power(int nb, int power)
 {
 	int	i;
-	int	j;
 
-	j = ac - 1;
-	while (j > 0)
+	i = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
 	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
+		nb = nb * i;
+		power--;
 	}
+	return (nb);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	int nb = 5;
+	int power = 3;
+	int res = ft_iterative_power(nb, power);
+	printf("%d\n", res);
+} */

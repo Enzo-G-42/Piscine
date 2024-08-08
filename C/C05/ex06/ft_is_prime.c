@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/28 17:55:51 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/28 20:36:43 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_is_prime(int nb)
 {
 	int	i;
-	int	j;
 
-	j = ac - 1;
-	while (j > 0)
+	if (nb <= 1)
+		return (0);
+	else if (nb == 2)
+		return (1);
+	i = 2;
+	while (i < nb)
 	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
+		if (nb % i == 0)
+			return (0);
+		i++;
 	}
+	return (1);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	//int nb = 3;
+	//int res = ft_is_prime(nb);
+	//printf("%d\n", res);
+	int x = ft_is_prime(3);
+	printf("%d\n", x);
+} */

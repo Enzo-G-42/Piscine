@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/28 17:34:58 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/28 20:22:30 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_fibonacci(int index)
 {
-	int	i;
-	int	j;
-
-	j = ac - 1;
-	while (j > 0)
-	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
-	}
+	if (index < 0)
+		return (-1);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	int i = 1;
+	int res = ft_fibonacci(i);
+	printf("%d\n", res);
+} */

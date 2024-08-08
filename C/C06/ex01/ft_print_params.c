@@ -6,7 +6,7 @@
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 19:50:35 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/24 19:53:56 by engiacom         ###   ########.fr       */
+/*   Updated: 2024/07/26 21:12:13 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	main(int ac, char **av)
 	int	j;
 
 	j = 1;
-	while(j < ac)
+	while (j < ac)
 	{
 		i = 0;
-		while(av[j][i] != 0)
+		while (av[j][i] != 0)
 		{
 			write(1, &av[j][i], 1);
 			i++;

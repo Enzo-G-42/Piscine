@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/31 01:44:42 by engiacom          #+#    #+#             */
+/*   Updated: 2024/08/01 01:19:59 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
-{
-	int	i;
-	int	j;
-
-	j = ac - 1;
-	while (j > 0)
-	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
-	}
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);

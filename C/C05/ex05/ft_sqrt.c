@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/28 17:51:09 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/28 20:35:58 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_sqrt(int nb)
 {
 	int	i;
-	int	j;
 
-	j = ac - 1;
-	while (j > 0)
+	i = 0;
+	while (i * i != nb)
 	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
+		if ((i * i) > nb)
+			return (0);
+		i++;
 	}
+	return (i);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	int nb = 49;
+	int res = ft_sqrt(nb);
+	printf("%d\n", res);
+} */

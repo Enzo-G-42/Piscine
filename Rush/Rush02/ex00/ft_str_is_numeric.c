@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jercaro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/29 15:05:37 by jercaro           #+#    #+#             */
+/*   Updated: 2024/07/29 15:19:03 by jercaro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_str_is_numeric(char *str)
 {
 	int	i;
-	int	j;
 
-	j = ac - 1;
-	while (j > 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		i = 0;
-		while (av[j][i] != 0)
+		if (str[i] < 48 || str[i] > 57)
 		{
-			write(1, &av[j][i], 1);
-			i++;
+			return (0);
 		}
-		write(1, "\n", 1);
-		j--;
+		i++;
 	}
+	return (1);
 }
+/*
+#include<stdio.h>
+int	main(void)
+{
+	char	*str;
+
+	str = "";
+	printf("code renvoye %d", ft_str_is_numeric(str));
+	return (0);
+}*/

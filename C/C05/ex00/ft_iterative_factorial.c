@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/28 16:48:30 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/28 22:29:16 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+int	ft_iterative_factorial(int nb)
 {
 	int	i;
-	int	j;
 
-	j = ac - 1;
-	while (j > 0)
+	i = nb - 1;
+	if (nb == 1 || nb == 0)
+		return (1);
+	if (nb < 0)
+		return (0);
+	while (i > 0)
 	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
+		nb = nb * i;
+		i--;
 	}
+	return (nb);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	int nb = 1;
+	int res = ft_iterative_factorial(nb);
+	printf("%d\n", res);
+} */

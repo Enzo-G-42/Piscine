@@ -1,44 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 22:08:14 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/28 14:11:05 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/29 17:28:10 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/30 19:47:14 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int	i;
 
-	i = 0;
-	while (str[i])
+	if (min >= max)
 	{
-		write(1, &str[i], 1);
+		tab = NULL;
+		return (NULL);
+	}
+	tab = malloc((max - min) * sizeof(int));
+	if (tab == NULL)
+		return (NULL);
+	i = 0;
+	while (i + min < max)
+	{
+		tab[i] = min + i;
 		i++;
 	}
+	return (tab);
 }
 /* 
-int main()
-{
-	ft_putstr("Coucou");
-} */
-/* 
-int main()
-{
-	write(1, "l\n", 2);
-} */
+#include <stdio.h>
 
-/* str1 "ABC"  str2 "CBA"
-str2[i] = str1[i] i++;
-ABC 
-swap
-a = str[0]
-str[0] = str[2]
-str[2] = a
- */
+int main()
+{
+	int *tab = ft_range(-3, 11);
+	int i = 0;
+	if (tab == NULL)
+	{
+		printf("NULL");
+		return (0);
+	}
+	while (i < 14)
+	{
+		printf("%d\n", tab[i]);
+		i++;
+	}
+	printf("\n");
+} */

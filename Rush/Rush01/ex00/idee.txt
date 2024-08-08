@@ -1,0 +1,115 @@
+
+
+         Tableau 6x6 arg + grille 4x4
+
+
+/* while(argv[1][i])
+	{
+		if ((j == 0 && k == 0) || (j == 0 && k == 5)
+					|| (j == 5 && k == 0) || (j == 5 && k == 5))
+		{
+			tab[j][k] = 0;
+			k++;
+		}
+		printf("tab[j][k] = [%d]\n", tab[j][k]);
+		printf("argv[1][i] = [%c]\n", argv[1][i]);
+		if (argv[1][i] >= '0' && argv[1][i] <= '9')
+		{
+			digit++;
+			printf("digit = [%d]\n", digit);
+			if ((j == 0 && k == 0) || (j == 0 && k == 5)
+					|| (j == 5 && k == 0) || (j == 5 && k == 5))   //  }test tab[6][6] arg + cell
+			{
+				tab[j][k] = 0;
+			}
+			if (digit == 5)
+			{
+				digit = 0;
+				j++;
+			}
+			if ((j == 0 || j == 5) && (k != 0 && k != 5))
+			{
+				tab[j][k] = argv[1][i] - 48;
+				printf("tab[j][k] = [%d]\n", tab[j][k]);
+				k++;
+			}
+			else if ((k == 0 || k == 5) && (j != 0 || j != 5))
+			{
+				tab[j][k] = argv[1][i] - 48;
+				printf("tab[j][k] = [%d]\n", tab[j][k]);
+				k++;
+			}
+			else
+				i--;
+			printf("tab[j][k] = [%d]\n", tab[j][k]);
+		}
+		i++;
+	} */
+
+
+                   Test condition visibiliter
+
+
+	while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+		{
+			if (arg[0][0] == 4)     //proto condition
+			{
+				tab[0][0] = 1;
+				tab[1][0] = 2;
+				tab[2][0] = 3;
+				tab[3][0] = 4;
+			}
+			if (arg[0][3] == 1)
+			{
+				tab[0][3] = 4;
+				//tab[1][0] = 2;
+				//tab[2][0] = 3;
+				//tab[3][0] = 4;
+			}
+			i++;
+		}
+		j++;
+	}
+
+
+
+
+              print tableau 4x4
+
+
+
+j = 0;
+	while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+		{
+			i++;//print tab
+			if (i < 6) //print espace
+			{
+			}
+		}
+		j++;//print "\n"
+	}
+
+
+        remplissage tableau 4x4 avec 0
+
+
+while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+		{
+			tab[j][i] = 0;
+			i++;
+		}
+		j++;
+	}
+
+
+
+	

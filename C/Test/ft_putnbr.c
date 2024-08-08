@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: engiacom <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 19:54:45 by engiacom          #+#    #+#             */
-/*   Updated: 2024/07/26 21:12:27 by engiacom         ###   ########.fr       */
+/*   Created: 2024/07/26 21:37:43 by engiacom          #+#    #+#             */
+/*   Updated: 2024/07/26 21:51:55 by engiacom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int ac, char **av)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	j;
+	write(1, &c, 1);
+}
 
-	j = ac - 1;
-	while (j > 0)
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		i = 0;
-		while (av[j][i] != 0)
-		{
-			write(1, &av[j][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
-		j--;
+		write(1, "-2147483648", 11);
+		return;
 	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + 48);
+	}
+}
+
+int main()
+{
+	int i = -2147483648;
+	ft_putnbr(i);
 }
